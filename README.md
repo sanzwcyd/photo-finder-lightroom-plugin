@@ -4,7 +4,7 @@ Lightroom Classic plugin that matches a client's file-name list against your cat
 
 **🇬🇧 [English](#-english)** | **🇮🇩 [Bahasa Indonesia](#-bahasa-indonesia)**
 
-**Instalation Tutorial & Demo : https://www.youtube.com/watch?v=qoLtqRs-i7I&pp=ygUuTGlnaHRyb29tIFBob3RvRmluZGVyIHBsdWctaW4sIERlbW8gJiBUdXRvcmlhbA%3D%3D
+Instalation Tutorial & Demo : https://www.youtube.com/watch?v=qoLtqRs-i7I&pp=ygUuTGlnaHRyb29tIFBob3RvRmluZGVyIHBsdWctaW4sIERlbW8gJiBUdXRvcmlhbA%3D%3D
 
 ---
 
