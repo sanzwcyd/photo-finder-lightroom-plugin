@@ -6,6 +6,8 @@ Lightroom Classic plugin that matches a client's file-name list against your cat
 
 Instalation Tutorial & Demo : https://www.youtube.com/watch?v=qoLtqRs-i7I&pp=ygUuTGlnaHRyb29tIFBob3RvRmluZGVyIHBsdWctaW4sIERlbW8gJiBUdXRvcmlhbA%3D%3D
 
+Tested on : Lightroom Classic 2021, 2020, 2022, CC 2019
+
 ---
 
 ## 🇬🇧 English
