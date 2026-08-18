@@ -1,3 +1,94 @@
+PHOTO FINDER & AUTO FILTER — Lightroom Classic Plugin
+=======================================================
+
+INSTALLATION
+1. Extract this zip file. You'll get a folder named "PhotoFinder.lrplugin".
+   Make sure the name still ends with ".lrplugin" (don't rename it).
+2. Open Lightroom Classic > File > Plug-in Manager.
+3. Click the "Add" button (bottom left), then select the "PhotoFinder.lrplugin" folder.
+4. Make sure the plugin status shows "Installed and running" (green).
+5. Click "Done".
+
+HOW TO USE
+1. Open your Lightroom catalog as usual.
+2. Open the menu: Library > Plug-in Extras > "Photo Finder - Cari & Tandai Foto".
+3. Paste the file-name list from your client into the text box provided.
+   - One name per line, or separated by commas — either works.
+   - Names can include the extension (e.g. DSC_1023.jpg) or not
+     (e.g. DSC_1023) — the plugin automatically matches regardless of
+     extension or letter case.
+4. Choose the search scope:
+   - "All Photographs" — searches every photo ever imported into the catalog.
+   - "Currently displayed photos (target)" — searches only the active
+     grid/filmstrip (e.g. already filtered to a specific folder).
+5. Choose the Color Label you want (default: Red), and optionally enable
+   Star Rating (1–5 stars).
+6. Click "Search".
+7. The plugin will:
+   - Tag every matching photo with your chosen Color Label / Star Rating.
+   - Automatically select those photos in the Library grid.
+   - Show a summary: how many photos were found, and a list of any file
+     names that were NOT found in the catalog — useful for spotting typos
+     or photos that haven't been imported yet.
+
+NEXT STEP (FILTERING IN LIGHTROOM)
+Once the photos are tagged, use Lightroom's built-in Library Filter at the
+top of the grid (View > Show Filter Bar, or press "\\"), then filter by
+Attribute > Color Label / Rating accordingly to see only your client's
+selected photos.
+
+LANGUAGE
+This plugin has its own language setting, separate from your Lightroom
+Classic application language. There's a "Language" dropdown at the bottom
+of the dialog, with these options: English (default), Bahasa Indonesia,
+Bahasa Melayu, ภาษาไทย, Tiếng Việt, Filipino, Simplified Chinese,
+Traditional Chinese, Español, 日本語, العربية, Português, 한국어, and
+Français. Your language choice is remembered automatically for next time.
+Note: Lightroom's own menu names (e.g. "Attribute", "Color Label") still
+follow your Lightroom application's own language, so they may be worded
+slightly differently from the plugin's text — the plugin shows a small
+note about this on the results screen.
+
+Translations other than Indonesian and English were produced with AI
+assistance; for production use or international teams, we recommend
+having a native speaker review each language before wider rollout.
+
+MID-SESSION LANGUAGE-SWITCH LIMITATION
+If you change the language WHILE the dialog is already open, most of the
+text (instructions, labels, the Source/Color/Rating dropdown contents)
+updates instantly. However, the window title and the Search/Cancel
+buttons at the bottom keep using whichever language was active WHEN the
+dialog was first opened — this is a built-in Lightroom SDK limitation
+(those two elements are controlled natively by Lightroom, not part of the
+view that can be refreshed live). Workaround: click Cancel, then reopen
+Photo Finder — next time, the entire dialog, including the title and
+buttons, will automatically match the language you last selected (since
+your language choice is always remembered).
+
+ABOUT BUTTON & CREDITS
+Click the "about" button (next to the Language dropdown) to open a credits
+window containing: a short plugin description, a short quote, and buttons
+for Github, Instagram, X, and Saweria. Since plain text in the Lightroom
+SDK can't be turned into a clickable hyperlink like on Instagram, each
+platform name is built as a BUTTON — clicking it automatically opens the
+matching link in your default browser.
+
+TECHNICAL NOTES
+- This plugin uses Adobe's official Lightroom SDK (Lua): LrApplication,
+  LrDialogs, LrView, LrBinding, LrPathUtils, LrTasks.
+- File-name matching is based on the file name (excluding the folder
+  path), ignoring the extension, and is not case-sensitive.
+- Metadata tagging is done via catalog:withWriteAccessDo, following the
+  official Lightroom SDK requirements for catalog changes.
+
+CUSTOMIZING THE PLUGIN
+All the logic lives in one file: PhotoFinderMain.lua — easy to edit if
+your editing team wants to add other options (e.g. auto-adding a Keyword,
+or matching based on a partial name/substring).
+
+
+====================================================================================
+
 PHOTO FINDER & AUTO FILTER — Plugin Lightroom Classic
 =======================================================
 
@@ -62,14 +153,6 @@ Lightroom, bukan bagian tampilan yang bisa diperbarui langsung). Solusinya:
 klik Cancel lalu buka Photo Finder lagi — kali berikutnya seluruh dialog,
 termasuk judul & tombol, akan otomatis sesuai bahasa terakhir yang kamu
 pilih (karena pilihan bahasa selalu diingat/disimpan).
-
-TOMBOL "ABOUT" & KREDIT
-Klik tombol "about" (di sebelah dropdown Language) untuk membuka jendela
-kredit berisi: deskripsi singkat plugin, quote singkat, serta tombol
-Github, Instagram, X, dan Saweria. Karena teks biasa di Lightroom SDK
-tidak bisa dijadikan hyperlink langsung seperti di Instagram, tiap nama
-platform itu dibuat sebagai TOMBOL — begitu diklik, otomatis membuka
-link terkait di browser default.
 
 CATATAN TEKNIS
 - Plugin ini menggunakan Lightroom SDK (Lua) resmi Adobe: LrApplication,
